@@ -13,6 +13,13 @@ Layout of the data-transfer operations. Terminals need to be set up to listen fr
 python2
 - serial
 - re
+- numpy
+- matplotlib
+
+python3
+- asyncio
+- websockets
+- numpy
 
 ## Setup
 
@@ -35,6 +42,8 @@ entranceFallout = [480,60] # must have greater span than entranceRange
 exitRange   = [400,40]
 exitFallout = [400,60]     # must have greater span than exitRange
 ```
+
+
 
 ## Running
 
