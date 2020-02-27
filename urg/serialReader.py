@@ -39,44 +39,6 @@ avg /= calibSteps
 print 'Room Calibrated.'
 
 
-
-'''
-def animate(frame):
-    data, timestamp = urg.capture()
-
-    if(np.sum(data) > 1):
-        ang = 2*3.14 * (270.0/360)
-        theta = np.linspace(0,ang,num=streamLen)
-        ax1.clear()
-        data -= avg
-        #print(avg)
-        #data = gaussian_filter(data, sigma=1)
-        maxSpan = 0
-        maxStart = 0
-        span  = 0
-        start = 0
-
-        for i in range(streamLen):
-            if(data[i] < -1):
-                span += 1
-            else:
-                if(span > maxSpan):
-                    maxSpan  = span
-                    maxStart = start
-                span = 0
-                start = i
-        print(maxStart, maxSpan)
-
-        data = np.clip(data, float('-inf'), 0)
-        ax1.plot(theta,data)
-ani = animation.FuncAnimation(fig, animate, interval=1)
-plt.show()
-'''
-
-
-
-
-
 def inRange(start, span, range):
     mid   = range[0]
     width = range[1]
@@ -89,12 +51,6 @@ def inRange(start, span, range):
 def write_to_file(val):
     dataFile = open("../websocket/data.txt",'a')
     dataFile.write(val)
-    dataFile.close()
-
-def stamp(val):
-    dataFile = open("../websocket/timestamp.txt",'a')
-    timestamp = "," + str(val)
-    dataFile.write(timestamp)
     dataFile.close()
 
 
@@ -165,7 +121,7 @@ while True:
                     write_to_file(":[0," + str(timestamp) + "]")
                 else:
                     write_to_file(":[1," + str(timestamp) + "]")
-                #stamp(timestamp)
+
         else:
             inEntrance = False
             inExit = False
