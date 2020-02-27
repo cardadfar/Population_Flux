@@ -23,25 +23,38 @@ Look for a device named tty.usbmodem(#number). In urg/pyUrg.py, change the port 
 
 You can configure the active entrance and exit range for the lidar in urg/serialReader.py.
 ```python
-        # of the form [peak, span] in degrees
-        entranceRange   = [480,40]
-        entranceFallout = [480,60] # must have greater span than entranceRange
-        exitRange   = [400,40]
-        exitFallout = [400,60] # must have greater span than exitRange
+# of the form [peak, span] in degrees
+entranceRange   = [480,40]
+entranceFallout = [480,60] # must have greater span than entranceRange
+exitRange   = [400,40]
+exitFallout = [400,60]     # must have greater span than exitRange
 ```
 
 ## Running
 
 To visualize the incoming Lidar data, run:
 ```bash
- python urg/serialViewer.py 
+python urg/serialViewer.py 
 ```
 
 To parse and save the Lidar data, make sure there is an empty data.txt file in websocket/, and run:
-
 ```bash
- python urg/serialRunner.py 
+python urg/serialRunner.py 
 ```
 
+To forward the data to the server, run (and keep alive):
+```bash
+python3 websocket/sender.py
+```
+
+To forward the data to the server, run:
+```bash
+python3 websocket/sender.py
+```
+
+Start a localhost at the root directory in order to visualize the results
+```bash
+python3 -m http.server
+```
 
 
