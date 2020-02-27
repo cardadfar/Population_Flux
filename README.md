@@ -8,6 +8,12 @@ Population Flux is a typology machine that measures the different population tre
 
 Layout of the data-transfer operations. Terminals need to be set up to listen from the serial port, transmit data over a web socket, and launch a localhost to view the visualization. The serial port terminal can be run independently to first capture the data, while the other two terminals can be run to parse and visualize the results.
 
+## Dependencies
+
+python2
+- serial
+- re
+
 ## Setup
 
 In a terminal at the home directory,
@@ -43,11 +49,6 @@ python urg/serialRunner.py
 ```
 
 To forward the data to the server, run (and keep alive):
-```bash
-python3 websocket/sender.py
-```
-
-To forward the data to the server, run:
 ```bash
 python3 websocket/sender.py
 ```
