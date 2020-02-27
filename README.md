@@ -10,6 +10,13 @@ Layout of the data-transfer operations. Terminals need to be set up to listen fr
 
 ## Setup
 
+In a terminal at the home directory,
+```bash
+cd /dev/
+ls
+```
+Look for a device named tty.usbmodem(#number). In urg/pyUrg.py, change the port variable default to the name of the tty modem
+
 ```python
- def connect(self, port = '/dev/tty.usbmodem143401', baudrate = 115200, timeout = 0.1):
+ def connect(self, port = '/dev/tty.usbmodem(#number)', baudrate = 115200, timeout = 0.1):
 ```
