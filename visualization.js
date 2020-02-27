@@ -57,16 +57,6 @@ export function GenerateRoom(scene) {
     cfa111.position.set(0,0,0);
     scene.add( cfa111 );
 
-    /*
-    var cfaGreatHall1 = new THREE.Mesh( new THREE.BoxGeometry( 400, 75, 150 ), material );
-    cfaGreatHall1.position.set(400,0,50);
-    scene.add( cfaGreatHall1 );
-
-    var cfaGreatHall2 = new THREE.Mesh( new THREE.BoxGeometry( 450, 75, 150 ), material );
-    cfaGreatHall2.position.set(0,25,50);
-    scene.add( cfaGreatHall2 );
-    */
-
     sceneRef = scene;
 
 }
